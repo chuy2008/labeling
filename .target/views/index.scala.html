@@ -1,0 +1,33 @@
+@main("Aplicacion de Etiquetado"){
+    
+    <h1>Aplicación de Etiquetado</h1>
+    
+    <h1 id="labeling"></h1>
+    
+    <p>
+        Esta aplicación convierte el archivo de salida de SAP en un archivo de entrada para Label...
+    </p>
+
+     <p class="buttons">
+         <input type="submit" id="submit">
+     <p>
+
+     <p class="buttons">
+         <input type="button" name="send" value = "Feed"/>
+     <p>
+
+     <p class="buttons">      
+          <a href="@routes.Application.index">Back to the form</a>
+     <p>
+    
+@*****
+    <script type="text/javascript" charset="utf-8">
+        // Called for each Comet message
+        var clockChanged = function(time) {
+            $('#clock').html(time.replace(/(\d)/g, '<span>$1</span>'))
+        }
+    </script>
+    
+    <iframe id="comet" src="@routes.Application.liveClock.unique"></iframe>
+*****@
+}
