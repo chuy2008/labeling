@@ -1,0 +1,26 @@
+@(formm: play.api.data.Form[Tester])
+
+@main("Eleccion de Nombre llenando campo"){
+    
+    <h1>Aqui se escribira en un campo el nombre</h1>
+    
+    <h1 id="name input"></h1>
+    
+    <p>
+        Aqui se escribira el nombre directamente...
+    </p>
+    
+      @helper.form(action = routes.Application.massageFile) {
+      	        @helper.inputText(formm("name"))
+      	        <input type="submit"/>
+      }   
+    
+     <p class="buttons">      
+          <a href="@routes.Application.selectFile">Ve con el valor de default....</a>
+     <p>
+
+     <p class="buttons">      
+          <a href="@routes.Application.index">Return to Main Page</a>
+     <p>
+
+}

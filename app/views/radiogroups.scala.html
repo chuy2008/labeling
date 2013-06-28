@@ -1,0 +1,10 @@
+@******************
+
+@form(routes.Application.myAction()) {
+  @radioGroup(
+    myForm("document"),
+    documents.map { d => d.id -> d.name }
+  )
+}
+
+******************@

@@ -1,0 +1,112 @@
+@(formm: play.api.data.Form[Tester])
+
+@*****
+@(gradeForm: Form[String])
+
+@(form: play.api.data.Form[Tester])
+
+@import views.html.helper._
+*****@
+@main("Eleccion de Archivo"){
+    
+    <h1>Aqui se elegiran los archivos</h1>
+    
+    <h1 id="select file"></h1>
+    
+    <p>
+        Aqui se elegira el archivo que se convertira a DBF...
+    </p>
+    
+      @helper.form(action = routes.Application.massageFile) {
+      	        @helper.inputText(formm("name"))
+      	        <input type="submit"/>
+      }   
+    
+    
+@****** 
+      @helper.form(action = routes.Application.massageFile) {
+      	        @helper.inputText(form("name"))
+      	        <input type="submit"/>
+      
+      This helper can accomodate selected value of radio button if present 
+      @helper.inputRadioGroup(
+         gradeForm("name"),
+         options = options("1" -> "1", "2" -> "2", "3" -> "3", "4" -> "4", "5" -> "5")
+      )
+      <input type="submit" value="Post">
+      *****@
+ @****      
+       @helper.inputText(form("name"))
+       <input type="submit"/>
+****@
+@****
+   @helper.form(routes.Application.selectFile){
+
+	   @helper.inputText(fileSelected)
+	     <input type="submit" name="send" value="Feed"/>	
+
+    }
+*****@
+
+
+@****
+#{form @Application.save()}
+
+<input type="radio" name="userSelection" value="ECG" /> ECG
+<input type="radio" name="userSelection" value="OXIMETER" />  OXIMETER 
+<input type="radio" name="userSelection" value="BP" />  BP
+
+<input type="submit" name="submit" value="Save" >
+#{/form}
+****@
+
+@******
+@inputRadioGroup(
+          contactForm("gender"),·
+          options = options("M"->"Male","F"->"Female")
+          '_label -> "Gender",
+          '_error -> contactForm("gender").error.map(_.withMessage("select gender")))
+******@
+
+@*****
+@helper.inputRadioGroup(consultForm("currency") 
+  , options = Seq(
+    "USD" -> "USD" 
+  , "HKD" -> "HKD" 
+  , "RMB" -> "RMB") 
+  , '_label -> "Currency" 
+  , '_error -> consultForm("currency").error.map(_.withMessage("select currency"))
+)(FieldConstructor(anotherFieldConstructor.f), lang)
+****@
+
+@****
+    @form(routes.Application.myAction()) {
+       @radioGroup(
+         myForm("document"),
+         documents.map { d => d.id -> d.name }
+        )
+     }
+****@
+
+     <p class="buttons">      
+          <a href="@routes.Application.selectFile">Go to testpos....</a>
+     <p>
+
+
+
+     <p class="buttons">      
+          <a href="@routes.Application.index">Return to Main Page</a>
+     <p>
+
+        
+@*****
+    <script type="text/javascript" charset="utf-8">
+        // Called for each Comet message
+        var clockChanged = function(time) {
+            $('#clock').html(time.replace(/(\d)/g, '<span>$1</span>'))
+        }
+    </script>
+    
+    <iframe id="comet" src="@routes.Application.liveClock.unique"></iframe>
+*****@
+}

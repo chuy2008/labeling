@@ -1,24 +1,28 @@
-@main("Aplicacion de Etiquetado"){
+@main("Aplicacion de demo"){
     
-    <h1>Aplicación de Etiquetado</h1>
+    <h1>Aplicación que solo muestra el flujo entre pantallas, llenado de campo y radiobuttons</h1>
     
     <h1 id="labeling"></h1>
     
     <p>
-        Esta aplicación convierte el archivo de salida de SAP en un archivo de entrada para Label...
+        Esta aplicación es mas didactica que otra cosa...
     </p>
 
      <p class="buttons">
-         <input type="submit" id="submit">
+         <input type="submit" id="submit" value = "just for show, does nothing">
      <p>
 
      <p class="buttons">
-         <input type="button" name="send" value = "Feed"/>
+         <input type="button" name="send" value = "just for show, does nothing"/>
      <p>
 
      <p class="buttons">      
-          <a href="@routes.Application.index">Back to the form</a>
+          <a href="@routes.Application.chooseFile">Go to a Regular Input Field</a>
      <p>
+    
+     <p class="buttons">      
+          <a href="@routes.Application.chooseFileByRadioButtons">Go to Radio Buttons!</a>
+     <p>    
     
 @*****
     <script type="text/javascript" charset="utf-8">

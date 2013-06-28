@@ -1,0 +1,22 @@
+@(name: Option[String])
+
+@import views.html.helper._
+
+@main("vamos a mostrar el nombre seleccionado"){
+    
+    <h1>el post esta trabajando correctamente</h1>
+    
+    <h1 id="nombre"></h1>
+    
+    <h2> the name is @Some(name) </h2>
+    
+    <p>
+        ya se eligio el nombre...
+    </p>
+
+
+     <p class="buttons">      
+          <a href="@routes.Application.index">Return to Main Page</a>
+     <p>
+
+}

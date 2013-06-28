@@ -1,0 +1,35 @@
+@(formm: play.api.data.Form[Tester])
+
+@import views.html.helper._
+
+@main("Radio Buttons"){
+    
+    <h1>Aqui se elegira un Radio Button</h1>
+    
+    <h1 id="select radio button"></h1>
+    
+    <p>
+        Aqui se elegira una opcion por medio de radio buttons...
+    </p>
+    
+      @helper.form(action = routes.Application.radioButtonSelected) {
+      
+      This helper can accomodate selected value of radio button if present 
+      @helper.inputRadioGroup(
+         formm("name"),
+         options = options("good" -> "good", "bad" -> "bad", "ugly" -> "ugly", "fun" -> "fun", "ass" -> "ass")
+      )
+      <input type="submit" value="Post">
+      }
+
+     <p class="buttons">      
+          <a href="@routes.Application.selectFile">Ve con el valor de default....</a>
+     <p>
+
+     <p class="buttons">      
+          <a href="@routes.Application.index">Return to Main Page</a>
+     <p>
+
+        
+
+}

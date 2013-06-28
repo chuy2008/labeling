@@ -1,0 +1,22 @@
+@(grade: String)
+
+@import views.html.helper._
+
+@main("vamos a mostrar la calificacion"){
+    
+    <h1>el post esta trabajando correctamente</h1>
+    
+    <h1 id="archivo ya seleccionado"></h1>
+    
+    <h2> the grade is @grade </h2>
+    
+    <p>
+        ya se eligio el archivo a convertir a DBF y se esta masajeando...
+    </p>
+
+
+     <p class="buttons">      
+          <a href="@routes.Application.index">Return to Main Page</a>
+     <p>
+
+}
