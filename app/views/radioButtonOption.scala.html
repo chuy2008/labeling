@@ -1,4 +1,4 @@
-@(formm: play.api.data.Form[Tester])
+@(formm: play.api.data.Form[Tester], listOfFiles: Array[String])
 
 @import views.html.helper._
 
@@ -17,10 +17,26 @@
       This helper can accomodate selected value of radio button if present 
       @helper.inputRadioGroup(
          formm("name"),
-         options = options("good" -> "good", "bad" -> "bad", "ugly" -> "ugly", "fun" -> "fun", "ass" -> "ass")
-      )
+         options = options(listOfFiles(0) -> listOfFiles(0), 
+         	               listOfFiles(1) -> listOfFiles(1), 
+         	               listOfFiles(2) -> listOfFiles(2), 
+         	               listOfFiles(3) -> listOfFiles(3), 
+         	               listOfFiles(4) -> listOfFiles(4) )
+         	               )         	
       <input type="submit" value="Post">
       }
+
+@******
+         options = options(
+         	@for(ii <- listOfFiles)yield ii -> ii
+         	)
+******@
+    	
+@*****        	
+         	@for(i <- 0 to (listOfFiles.length - 1) yield listOfFiles(i) -> listOfFiles(i)   	
+         	)
+******@
+
 
      <p class="buttons">      
           <a href="@routes.Application.selectFile">Ve con el valor de default....</a>

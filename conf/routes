@@ -13,5 +13,8 @@ GET    /filebeingmassaged           controllers.Application.selectFile
 GET    /radiooptions                controllers.Application.chooseFileByRadioButtons
 POST   /radiooptions                controllers.Application.radioButtonSelected
 
+GET    /radiooptionss                controllers.Application.chooseFileByRadioButtonss
+POST   /radiooptionss                controllers.Application.radioButtonSelectedd
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
